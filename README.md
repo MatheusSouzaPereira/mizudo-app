@@ -8,7 +8,7 @@ Aplicação para gerenciamento de membros da associação de Karatê
 - JAX-RS
 - Autenticação com JWT
 - Angular 13 
-- *Ionic v6 (em estudos)
+- Ionic v6 (em estudos)
 - PostgresSQL
  
 ## Hospedagem
