@@ -1,7 +1,7 @@
 @startuml
 left to right direction
 actor Administrator as admin
-actor Corrdenador as cood
+actor Coordinator as cood
 actor Instructor as inst
 actor Examinator as ex
 actor Student as st
@@ -11,47 +11,50 @@ inst <|-- cood
 ex <|-- cood
 cood <|-- admin
 
-rectangle "Profile"{
-    usecase "Profile view" as pView 
+
+rectangle "Profile" {
+    usecase "Profile view" as pView
     usecase "Profile update" as pUpdate
-    usecase "Password change" as pChange
+    usecase "Password Change" as pChange
 }
 
-
-rectangle "Members"{
+rectangle "Members" {
     usecase "Member registration" as mr
-    usecase "Member upadate" as mu
+    usecase "Member update" as mu
     usecase "Member promotion" as mPromo
     usecase "Member password reset" as mPReset
 }
-rectangle "Classes absence"{
-    usecase "Absence registration" as ar
-   usecase "Absence removal" as aRemoval
+
+rectangle "Classes absence" {
+    usecase "Absence regitration" as aReg
+    usecase "Absence removal" as aRemoval
 }
-rectangle "Classes"{
+
+rectangle "Classes" {
     usecase "Class registration" as cReg
     usecase "Class update" as cUpdate
     usecase "Class removal" as cRemoval
     usecase "Classes list" as cList
 }
-rectangle "Exames" {
+
+rectangle "Exams" {
     usecase "Exam creation" as exCreation
     usecase "Exam update" as exUpdate
     usecase "Exam completion" as exCompletion
-    usecase "Exam result registration" as exResult
+    usecase "Exam result registration" as exResults
 }
 
 st --> cList
-st --> pview 
+st --> pView
 st --> pUpdate
 st --> pChange
 
-inst --> mr 
-inst --> mu 
-inst --> ar
+inst --> mr
+inst --> mu
+inst --> aReg
 inst --> aRemoval
 
-ex --> exResult
+ex --> exResults
 
 cood --> mPReset
 cood --> mPromo
@@ -59,5 +62,8 @@ cood --> cReg
 cood --> cRemoval
 cood --> exCreation
 cood --> exUpdate
+cood --> exCompletion
+
+
 
 @enduml
